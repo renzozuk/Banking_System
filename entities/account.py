@@ -39,13 +39,16 @@ class Account(ABC):
         self.withdraw(amount)
         other.deposit(amount)
 
+    def basic_info(self):
+        return f"Branch: {self.__branch}, Number account: {self.__number}"
+
     def __eq__(self, other):
         return self.__branch == other.__branch and self.__number == other.__number
 
     def __str__(self):
         return (f"==============================\n"
                 f"Bank statement:\n"
-                f"Branch: {self.__branch.number}\n"
+                f"Branch: {self.__branch}\n"
                 f"Number account: {self.__number}\n"
                 f"Balance: ${self.__balance:.2f}\n"
                 f"==============================")

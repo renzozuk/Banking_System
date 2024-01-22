@@ -85,11 +85,11 @@ class Bank:
         self.__current_account = None
         self.__current_customer = None
 
-    def account_login(self, branch_number, number):
+    def account_login(self):
         if self.__current_customer is None:
             return False
 
-        self.__current_account = self.current_customer.login_account(branch_number, number)
+        self.__current_account = self.current_customer.login_account()
 
     def account_logout(self):
         self.__current_account = None

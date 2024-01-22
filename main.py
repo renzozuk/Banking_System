@@ -19,15 +19,17 @@ bank.add_saving_account(bank.current_customer)
 
 # The user has to log in as a user before enter its account, because the user can have more than 1 account
 
-bank.account_login("0001", "7891-6")
+bank.account_login()
 
-print(bank.current_account)
+yato_account = bank.current_account
 
-bank.current_account.deposit(311.15)
-bank.current_account.withdraw(350)
-bank.current_account.withdraw(150)
+print(yato_account)
 
-print(bank.current_account)
+yato_account.deposit(311.15)
+yato_account.withdraw(350)
+yato_account.withdraw(150)
+
+print(yato_account)
 
 bank.customer_logout()
 
@@ -37,14 +39,22 @@ bank.customer_login("John.Oliveira.2", "abracadabra")
 
 bank.add_checking_account(bank.current_customer)
 
-bank.account_login("0001", "4322-9")
+bank.account_login()
 
-print(bank.current_account)
+john_account = bank.current_account
 
-bank.current_account.deposit(5000)
-bank.current_account.withdraw(4500)
+print(john_account)
 
-print(bank.current_account)
+john_account.deposit(5000)
+john_account.withdraw(4500)
+
+print(john_account)
+
+john_account.transfer(yato_account, 100)
+
+print(john_account)
+
+print(yato_account)
 
 bank.customer_logout()
 

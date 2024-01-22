@@ -10,4 +10,4 @@ class SavingAccount(Account):
         if amount > self._balance:
             print("You don't have enough money to withdraw the amount required.")
             return
-        self._balance = self._balance - amount
+        self._balance -= amount
